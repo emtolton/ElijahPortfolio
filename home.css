@@ -1,0 +1,393 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 20px;
+    background-image: url('background.jpg');
+    background-size: cover; /* Image scales based on the viewport width and height */
+    background-repeat: no-repeat, repeat, repeat;
+    background-attachment: fixed;
+    color: #333;
+  }
+
+  header {
+    background-color: #333;
+    color: white;
+    border-radius: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    z-index: 1000;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 100px;
+  }
+
+  .branding {
+    display: flex;
+    align-items: center;
+    gap: 50px; /* Adds space between name and logo */
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .branding h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .branding img {
+    height: 80px; /* Adjust logo size as needed */
+    width: auto;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+
+  nav ul li {
+    display: inline;
+    font-size: 20px;
+  }
+
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  nav ul li a:hover {
+    background-color: #555;
+  }
+
+  #name{
+    text-decoration: none;
+    color: inherit;
+    color: #555;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius:2px;
+    transition: background-color 0.3s ease;
+  }
+
+  #name:hover{
+    background-color: #555;
+    color:white;
+
+  }
+
+  main {
+    margin-top: 120px;
+    margin-right: 12%;
+    margin-left: 12%;
+    background: rgb(128, 127, 127);
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width:300px;
+  }
+
+  footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #777;
+  }
+
+  .attr{
+    font-size: 12px;
+  }
+
+  .heading {
+    text-align: center;
+    border: 5px dashed black;
+    padding-top: 20px;
+    background-color: rgb(189, 193, 202);
+  }
+
+  .heading h2{
+    font-weight: 300px;
+    font-size: 30px;
+  }
+
+  @media (max-width: 900px) {
+    nav h1 {
+      display: none;
+    }
+    nav {
+        height: 100 px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    nav ul {
+      gap: 30px;
+    }
+
+    main {
+      padding: 40px;
+    }
+  }
+
+  #headshot {
+    border-radius: 20%; /* Makes the image circular */
+    width: 100%; /* Default width for responsiveness */
+    max-width: 450px; /* Limits the maximum size of the image */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures the image scales nicely within its container */
+    margin-right: 6%;
+  }
+
+
+  /* Check if this CSS would work with new .format left/right div */
+  .format {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap into new rows on smaller screens */
+    justify-content: space-between; /* Spaces columns equally on larger screens */
+    align-items: center; /* Centers items vertically */
+    padding: 30px 50px;
+    gap: 20px; /* Adds space between columns */
+    align-items: stretch; /* Ensures all flex items have equal height */
+
+    
+  }
+  
+  .format .left,
+  .format .right {
+    flex: 1; /* Equal width for left and right columns */
+    min-width: 200px; /* Prevents the columns from becoming too narrow */
+  }
+  
+  .format .left {
+    flex: 1; /* Allocates a smaller proportion of space to the left column */
+    max-width: 40%; /* Restricts the maximum width of the left column */
+    display: flex; /* Enables flexbox layout for the container */
+    flex-direction: column; /* Stacks child elements vertically */
+    gap: 10px; /* Adds spacing between stacked elements */
+    text-align: left; /* Aligns content to the left */
+    margin-right: 10%;
+    margin-left: 3%;
+}
+  
+  
+  .format .right {
+    display: flex; /* Enables flexbox on the container */
+    justify-content: center; /* Horizontally centers the image */
+    align-items: center; /* Vertically centers the image */
+    text-align: center; /* Ensures any additional content inside is centered */
+    flex-direction: column; /* Stacks columns vertically */
+    align-items: center; /* Centers elements horizontally */
+
+  }
+  
+  /* Center all elements on smaller screens */
+  @media (max-width: 1200px) {
+    .format {
+      flex-direction: column; /* Stacks columns vertically */
+      align-items: center; /* Centers elements horizontally */
+    }
+  
+    .format .left,
+    .format .right {
+      width: 100%; /* Takes full width of the container */
+      max-width: none; /* Ensures no width restriction */
+      text-align: center; /* Centers text for smaller screens */
+      margin: 0px;
+    }
+  
+    .format .right {
+      margin-top: 20px; /* Adds some spacing between left and right sections */
+      margin-right: 30px;
+    }
+  }
+
+  @media(max-width: 500px){
+    .format .left,
+    .format .right {
+      width: 100%; /* Takes full width of the container */
+      max-width: none; /* Ensures no width restriction */
+      text-align: left; /* Centers text for smaller screens */
+      margin: 0px;
+      padding:0px;
+    }
+  }
+  form {
+    width: 60%;
+    margin: 20px auto; /* Centers the form */
+    padding: 20px;
+    background: rgb(128, 127, 127); /* Matches the main background */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  form label {
+    display: block; /* Ensures labels are on their own lines */
+    margin-bottom: 5px;
+    color: white; /* Matches the color scheme */
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #333; /* Matches header background */
+    border-radius: 5px; /* Rounded corners */
+    background: #555; /* Input background */
+    color: white; /* Text color */
+    font-size: 1rem;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+  
+  form input[type="text"]:focus,
+  form input[type="email"]:focus,
+  form textarea:focus {
+    border-color: white; /* Highlighted border on focus */
+    outline: none;
+    background: #333; /* Darker background on focus */
+  }
+  
+  form textarea {
+    resize: none; /* Prevents resizing */
+  }
+  
+  form button {
+    display: inline-block;
+    background: #333; /* Matches header background */
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  form button:hover {
+    background: rgb(155, 162, 170); /* White background on hover */
+    color: #333; /* Inverts text color */
+  }
+  
+  form button:active {
+    background: #555; /* Slightly lighter background on click */
+    color: white; /* Reverts text to white */
+  }
+
+  .icons img {
+    width: 100px; /* Adjust the size of the icons */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px 50px; /* Add some spacing around the icons */
+    border-radius: 5px; /* Optional: Add rounded corners */
+    transition: transform 0.2s ease; /* Add a subtle zoom effect on hover */
+  }
+  
+  .icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  }
+
+  li{ 
+    text-align: left;
+    margin-top:3px;
+  }
+
+  img{
+    width:100%;
+    height:auto;
+  }
+
+  .bigC {
+    display: flex; /* Enables Flexbox layout */
+    justify-content: center; /* Centers items horizontally */
+    align-items: center; /* Centers items vertically */
+  }
+
+  .bigC ul {
+    margin: 0;
+    padding: 0;
+  }
+  .bigC li {
+    text-align: center; /* Ensures text within each list item is centered */
+  }
+
+
+  .left h2 a {
+    color:#333;
+    text-decoration: underline; /* Remove underline */
+    position: relative; /* Enable movement using `top` */
+    transition: color 0.3s, top 0.8s; /* Smooth transition for color and position */
+  }
+  
+  .left h2 a:hover,
+  .left h2 a:active {
+    color: #4f496e; /* Change text color to white */
+    top: -5px; /* Move text slightly upward */
+  }
+
+  .Languages {
+    list-style-type: disc; /* Optional: Keeps bullets */
+    margin-left: 25%;
+  }
+  
+  .Languages li {
+    font-size: 1.5em; /* Makes the text larger */
+    font-weight: bold; /* Makes the text bold */
+    margin-bottom: 5px; /* Adds space between items */
+  }
+
+  .Logos {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to a new line */
+    justify-content: center; /* Centers content horizontally */
+    gap: 20px; /* Adds space between items */
+    max-width: 500px; /* Adjust as needed for desired column width */
+    margin: 0 auto; /* Centers the container */
+    margin-right: 8%;
+  }
+
+ 
+
+  .Logos img {
+    flex: 1 1 calc(50% - 20px); /* Each image takes 50% of the width minus the gap */
+    max-width: 100px; /* Ensures images are responsive */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: contain; /* Adjusts the image fitting */
+  }
+
+  #CSharp{
+    width: 200px;
+  }
+
+  .ClassLearns > li{
+    text-decoration: none;
+    font-weight: 750;
+  }
+
+  .ClassLearns ul{
+    margin-left: 4%;
+  }
+
+  @media(max-width: 700px){
+    #branding{
+      display: none;
+    }
+  }
