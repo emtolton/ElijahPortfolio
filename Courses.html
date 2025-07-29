@@ -103,7 +103,115 @@
       </div>
 
       <h1>Courses</h1>
-      <p>Below are CS courses I have taken. Each has a non-exhaustive list of things I have learned.</p>
+      <p>Below are CS courses I have taken at the University of Utah. Each has a non-exhaustive list of concepts and skills taught in that class.</p>
+
+      <div class="format">
+        <div class="left">
+            <h3 style="text-decoration: underline;">Software Practice 2</h3>
+            <p>5/1/2025</p>
+            <ul class="ClassLearns">
+              <li>C++</li>
+              <ul>
+                <li>Learned basics of C++; Insertion operator, Extraction operator, standard library, Scope resolution operator, arrays, etc.</li>
+                <li>OOP in C++; Constructors, Destructors, Header files, overloading operators, copy constructor etc.</li>
+                <li>No garbage collector; We learned about pointers and references, allocating and deallocating memory to avoid memory leaks.</li>
+                <li>Pass by value is the default in C++.</li>
+                <li>Documentation with Doxygen</li>
+                <li>Enums in C++</li>
+              </ul>
+
+              <li>Environment</li>
+              <ul>
+                <li>Used Docker Desktop and Linux Ubuntu instance.</li>
+                <li>Basic terminal commands. pwd, cd, kill, ls, etc.</li>
+              </ul>
+            
+              <li>Compiling</li>
+              <ul>
+                <li>Makefiles and how to compile code from them.</li>
+                <li>Create variables in Makefiles.</li>
+                <li>Name: dependencies
+                        ->(Command to make it)
+                </li>
+                <li>Debugging with Makefile and -g flag.</li>
+              </ul>
+            
+              <li>Code Style</li>
+              <ul>
+                <li>Maximize readability and maintainability.</li>
+                <li>Abstraction, minimize complexity.</li>
+              </ul>
+            
+              <li>OOP principles</li>
+              <ul>
+                <li>C++ allows multi-inheritance; But don't inherit from multiple classes to avoid dread diamond situation.</li>
+                <li>Use scope resolution operator to specify methods.</li>
+                <li>Interface is a class with only purely virtual methods. virtual void MyMethod()=0;</li>
+                <li>Use the virtual keyword to determine method at runtime not compile time. Allowing for the most derived method to be called, crucial for polymorphism.</li>
+                <li>Object slicing: slices off fields or methods of a derived class when passed as a base class.</li>
+              </ul>
+            
+              <li>Data Structures</li>
+              <ul>
+                <li>Maps, Arrays, Linked lists, Binary Trees in C++</li>
+              </ul>
+            
+              <li>MVC</li>
+              <ul>
+                <li>MVC separates logic, UI, and user input.</li>
+                <li>Use signals and slots in Qt to interact between the view and the model.</li>
+              </ul>
+            
+              <li>Testing</li>
+              <ul>
+                <li>TDD; Cost to fix bug in requirements stage is 30x less expensive than in production phase.</li>
+                <li>Googletest</li>
+                <li>ASSERT_EQ(x.size(), y.size());</li>
+              </ul>
+            
+              <li>Error Handling</li>
+              <ul>
+                <li>Exceptions in C++</li>
+                <li>Try, catch</li>            
+              </ul>
+            
+              <li>Software Engineering</li>
+              <ul>
+                <li>Roles in Software: customer, manager, developer, tester, user.</li>
+                <li>Design: Unified Modeling Language (UML)</li>
+                <li>Software development methodologies: Waterfall, Agile, Kanban</li>
+                <li>Waterfall: Makes one pass from idea to final product. Requirements -> Design -> Implementation -> Integration and Testing -> Maintenance.
+                  Use Waterfall when requirements are clear and fixed and developer turnover is high.
+                </li>
+                <li>Agile: Mindset and values of how to develop software. Individuals over processes, working software over comprehensive documentation. (Agile Manifesto)</li>
+                <li>Scrum and Kanban are flavors of Agile mindset. Scrum uses sprints to organize development cycles and utilizes daily standup.</li>
+                <li>Kanban limit the number of work in progress on tickets.</li>
+              </ul>
+            
+              <li>Qt</li>
+              <ul>
+                <li>Qt is a C++ UI framework which can create widget and desktop applications.</li>
+                <li>Use signals and slots to interact with UI.</li>
+                <li>Function and method pointers.</li>
+                <li>Qt has many classes in the standard library to make UI development easier.</li>
+              </ul>
+            
+              <li>Team Skills</li>
+              <ul>
+                <li>In the second half of the course we combined into teams of 5 to practice different software development methodologies.</li>
+                <li>Created a sprite editor using Waterfall approach in Qt.</li>
+                <li>Created RegexTrainer using Scrum/Kanban approach in Qt.</li>
+              </ul>
+
+              <li>Versioning</li>
+              <ul>
+                <li>Used git bash</li>
+                <li>Learned a lot about versioning with branches and working on files within large teams.</li>
+              </ul>
+            </ul>
+        </div>
+      </div>
+
       <div class="format">
         <div class="left">
             <h3 style="text-decoration: underline;">Software Practice 1</h3>
@@ -199,7 +307,7 @@
             </ul><br>
           
             <li>Algorithms</li>
-            <h4 style="font-weight: 700;">Searchs</h4>
+            <h4 style="font-weight: 700;">Searches</h4>
             <ul>
               <li>Sequential Search: A simple search method that checks each element in order.</li>
               <li>Binary Search: An efficient search algorithm for sorted data, with O(log n) complexity.</li>
@@ -212,7 +320,7 @@
               <li>Quick Sort: A divide-and-conquer algorithm that uses a pivot to partition the array and recursively sort partitions.</li>
               <li>Merge Sort: A stable, divide-and-conquer algorithm that merges sorted subarrays into a single sorted array.</li>
             </ul> <br>
-            <h4 tyle="font-weight: 700;">Graph Algorithms</h4>
+            <h4 style="font-weight: 700;">Graph Algorithms</h4>
             <ul>
               <li>Depth First Search (DFS): Traverses graph/tree structures deeply along branches before backtracking.</li>
               <li>Breadth First Search (BFS): Explores graph/tree structures level by level, ideal for finding the shortest path.</li>
