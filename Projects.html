@@ -29,6 +29,66 @@
 
       <div class="format">
         <div class="left">
+          <div id="Graderific">
+            <h2><a href="https://github.com/ElijahTolton/Graderific">Graderific</a></h2>
+            <span>5/1/2025</span>
+            <h3 style="padding-left:5%; padding-right: 5%; text-align: left;">Project overview</h3>
+            <p style ="padding-left:5%">
+                Grading and assignment submission web application. There are 3 different types of users a superuser/professor, a TA and a student.
+                Each type of user has a different view on the site. Dynamic webpage made using Django.
+            </p><br>
+
+            <ul style="padding-left:8%; list-style-type: disc;">
+                <li>Student view: students can see assignment descriptions, when assignments are due, their grade on assignments and their submissions.</li>
+                <li>TA view: TAs can see all assignments that are assigned to them, and can grade said assignments.</li>
+                <li>Professor view: Professors can see all assignments, submissions, and how many submitted assignments are graded.</li>
+                <li>Used Django and mongoDB to make website dynamic for each user.</li>
+                <li>Javascript was used to make the website more interactive. Making tables sortable and making assignment submission asynchronous.</li>
+                <li>Used AWS to deploy the server and namecheap to get Graderific.me domain name.</li>
+                <li>Used NGINX as proxy server to increase performance.</li>
+            </ul><br />
+
+            <p style ="padding-left:5%">
+                This project was completed throughout the entirety of web dev 1. Steps in creating the website: <b>1.</b> HTML <b>2.</b> CSS <b>3.</b> Django views <b>4.</b> HTML Forms (GET/POST requests)
+                <b>5.</b> Authentication and Authorization (Users and Security) <b>6.</b> Javascript (website interactivity) <b>7.</b> Website Deployment.
+                Graderific is not longer running on AWS.
+            </p>
+            <br>
+            <p ><b>Big Concepts:</b>
+            </p>
+            <div class="bigC">
+              <ul>
+                <li>Python</li>
+                <li>Django models</li>
+                <li>Django views</li>
+                <li>Django templates</li>
+                <li>mongoDB</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Django webserver</li>
+                <li>HTTP Requests</li>
+                <li>Encryption and Security</li>
+                <li>Javascript</li>
+                <li>Asynchronous form submission</li>
+                <li>AWS and NGINX (Web Deployment)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="GraderificLogin.PNG">
+          <br>
+          <img src="GraderificGrades.PNG">
+          <br>
+          <img src="GraderificSuperuserProfile.PNG">
+          <br>
+          <img src="GraderificAssignment3.PNG">
+          <br>
+        </div>
+      </div>
+
+      <div class="format">
+        <div class="left">
           <div id="RegexTrainer">
             <h2><a href="https://github.com/ElijahTolton/RegexTrainer">RegexTrainer</a></h2>
             <span>5/1/2025</span>
@@ -45,7 +105,7 @@
                 <li>The user enters a regex expression and it must match the words on the left, but cannot match the words on the right.</li>
                 <li>Often times there are many answers to each practice slide so users can be creative.</li>
                 <li>After each lesson is complete there is a celebration scene to congratulate the users progress.</li>
-                <li>We take the user input attempt to create a regex object out of it and then apply it to the list of strings, if it matches all of them they can move to the next slide.</li>
+                <li>We take the user input and attempt to create a regex object out of it and then apply it to the list of strings, if it matches all of them the user can move to the next slide.</li>
             </ul><br />
 
             <p style ="padding-left:5%">
