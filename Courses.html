@@ -32,6 +32,7 @@
           <ul class="Languages">
             <li>C#</li>
             <li>C++</li>
+            <li>C</li>
             <li>JavaScript</li>
             <li>Java</li>
             <li>Python</li>
@@ -55,6 +56,7 @@
             <img src="HTML.png">
             <img src="CSS.png">
             <img src="SQL.png">
+            <img src="C.png">
             <img src="Qt.png">
             <img src="Unity.png">
             <img src="djangoLogo.png">
@@ -74,7 +76,7 @@
               <li>Basic C# Networking</li>
               <li>Self Documenting Code</li>
               <li>MVC</li>
-              <li>Seperation of Concerns</li>
+              <li>Separation of Concerns</li>
               <li>SOLID software principles</li>
             </ul>
             <br>
@@ -82,6 +84,7 @@
             <ul class="Languages">
               <li>Visual Studio</li>
               <li>GitHub</li>
+              <li>Rider</li>
               <li>VS Code</li>
               <li>IntelliJ IDEA</li>
               <li>Pycharm</li>
@@ -94,6 +97,7 @@
             <img src="DSAlg.png">
             <img src="Github.png">
             <img src="IntelliJ_IDEA.png">
+            <img src="Rider.png">
             <img src="MVC.png">
             <img src="OOP.png">
             <img src="SOLIDPrinicples.png">
@@ -108,6 +112,694 @@
 
       <h1>Courses</h1>
       <p>Below are CS courses I have taken at the University of Utah. Each has a non-exhaustive list of concepts and skills taught in that class.</p>
+
+      <div class="format">
+        <div class="left">
+            <h3 style="text-decoration: underline;">Computer Systems</h3>
+            <p>12/15/2025</p>
+            <ul class="ClassLearns">
+              <li>Binary Representations</li>
+              <ul>
+                <li>little endian v.s. big endian</li>
+                <li>IEEE floating point representation</li>
+              </ul>
+
+              <li>x86-64</li>
+              <ul>
+                <li>AT&T syntax (src, dst)</li>
+                <li>Registers, Immediates, Calling conventions</li>
+                <li>Condition Codes: CF, ZF, SF, OF</li>
+                <li>Instructions types: compares, jumps, arithmetic, loads, stores</li>
+                <li>Jump tables, procedures</li>
+                <li>gdb disassemble and stepping through asm programs</li>
+              </ul>
+              
+              <li>C</li>
+              <ul>
+                <li>Functions</li>
+                <li>Arrays</li>
+                <li>Pointers</li>
+                <li>Structures (Layout + Alignment)</li>
+                <li>Unions</li>
+                <li>Compiling bash gcc</li>
+                <li>Optimizations: compiling, loop unrolling, reassociation, blocking</li>
+              </ul>
+
+              <li>Memory Hierarchy</li>
+              <div style="width: 400px; margin: auto; text-align: center; font-family: Arial, sans-serif;">
+
+                <div style="border: 2px solid #000; padding: 10px; margin: 8px;">
+                  <strong>Registers</strong><br>
+                  Fastest • Smallest • CPU
+                </div>
+
+                <div style="border: 2px solid #000; padding: 10px; margin: 8px;">
+                  <strong>L1 Cache</strong><br>
+                  Very fast • Very small
+                </div>
+
+                <div style="border: 2px solid #000; padding: 10px; margin: 8px;">
+                  <strong>L2 Cache</strong><br>
+                  Fast • Small
+                </div>
+
+                <div style="border: 2px solid #000; padding: 10px; margin: 8px;">
+                  <strong>L3 Cache</strong><br>
+                  Shared • Larger • Slower
+                </div>
+
+                <div style="border: 2px solid #000; padding: 10px; margin: 8px;">
+                  <strong>Main Memory (RAM)</strong><br>
+                  Moderate speed • GBs
+                </div>
+
+                <div style="border: 2px solid #000; padding: 10px; margin: 8px;">
+                  <strong>Secondary Storage (SSD/HDD)</strong><br>
+                  Slow • Persistent • TBs
+                </div>
+              </div>
+              
+              <ul>
+                <li>Spatial Locality: Data next to recently used data is more likely to be used soon</li>
+                <li>Temporal Locality: Data used recently more likely to be used again.</li>
+                <li>L1 cache 4-5 cycles</li>
+                <li>L2 cache 12 cycles</li>
+                <li>L3 cache 36 cycles</li>
+                <li>Memory ~100 cycles</li>
+                <li>Bus = communication between memory units.</li>
+              </ul>
+
+              <li>Caches</li>
+              <ul>
+                <li>Cache Entry: Address= [tag(t bits), set(s bits), block offset(b bits)]</li>
+                <li>Cache size = E*S*B</li>
+                <li>#offset bits = log_2(Block Size)</li>
+                <li>#index bits = log_2(# of sets)</li>
+                <li>#tag bits = address size - # offset bits - # index bits</li>
+                <li>Number of blocks  = Cache capacity / Block size</li>
+                <li>Cold miss: cache is empty</li>
+                <li>Conflict miss: cache is large enough, but multiple data objects all map to the same level k block.</li>
+                <li>Capacity miss: set of active cache blocks is larger than the cache.</li>
+              </ul>
+
+              <li>Cache Coherence</li>
+              <ul>
+                <li>Write hit</li>
+                <ul>
+                  <li>write-through: write immediately to memory</li>
+                  <li>write-back: defer write to memory until replaced</li>
+                </ul>
+                <li>Write miss</li>
+                <ul>
+                  <li>write-allocate: load into cache, update cache</li>
+                  <li>No-write-allocate: write straight to memory</li>
+                </ul>
+              </ul>
+
+              <li>Optimizations</li>
+              <ul>
+                <li>Compiler optimizations does not select efficient algorithms.</li>
+                <li>Big-O savings are often more important than constant factors.</li>
+                <li>Compilers operate under fundamental constraint: must not cause change in program order.</li>
+                <li>Many optimization strategies to better utilize caches and cpu register level parallelism</li>
+                <li>Loop unrolling</li>
+                <li>Reassociation</li>
+                <li>Blocking</li>
+              </ul>
+
+              <li>Exceptions: Allow program to react to changes in the system state.</li>
+              <ul>
+                <li>Exceptions: change in control flow to OS kernel in response to a system event</li>
+                <li>Asynchronous Exceptions: events  external to the processor</li>
+                <li>Synchronous Exceptions: events that occur from executing instruction</li>
+                <li>Page Fault: item is not mapped to physical memory yet.</li>
+              </ul>
+
+              <li>Processes: instance of a running program</li>
+              <ul>
+                <li>Logical Control Flow abstraction: each program seems to have exclusive use of cpu.</li>
+                <li>Private address space abstraction: each program seems to have exclusive use of main memory.</li>
+                <li>fork(), wait(), execve(), waitpid()</li>
+                <li>Process groups</li>
+              </ul>
+              
+
+              <li>File descriptors</li>
+              <ul>
+                <li>Unix philosophy: Everything is a file.</li>
+                <li>handle to a file's input is an int</li>
+                <li>int open(const char* path, int flags);</li>
+                <li>UNIX I/O</li>
+                <li>ssize_t read(int fd, void* buf, size_t n);</li>
+                <li>ssize_t write(int fd, const void* buf, size_t n);</li>
+                <li>Pipe: creates an "unnamed" file as a connection between processes.</li>
+                <li>File descriptors are shared between processes.</li>
+                <li>C I/O File calls are 10x faster because it doesn't have to go through the kernel every time.</li>
+              </ul>
+              
+              <li>Signals</li>
+              <ul>
+                <li>General mechanism to push information to a process.</li>
+                <li>Send signals to specified process: int kill(pid, int signum);</li>
+                <li>Set signal handlers(function of what to do when signal arrives) for process</li>
+                <li>Blocking signals</li>
+                <li>Waiting for signals</li>
+              </ul>
+            
+
+              <li>Virtual Memory</li>
+              <ul>
+                <li>Isolates processes that execute concurrently.</li>
+                <li>Simplifies memory management.</li>
+                <li>Virtual Addresses can be >> physical memory. ( Utilize disk + memory )</li>
+                <li>Page table: Data structure in physical memory mapping virtual addresses to physical addresses.</li>
+                <li>Each process has its own page table.</li>
+                <li>Action of page hit. 1. MMU looks up page table 2. Looks up virtual addr. 3. translate to physical addr. 4. return result.</li>
+                <li>Translation Lookaside Buffer(TLB): cache for VM addrs -> PM addresses.</li>
+              </ul>
+
+              <li>Dynamic Memory allocation</li>
+              <ul>
+                <li>mmap(), unmap(), sbrk()</li>
+                <li>Standard C allocation: malloc(), free(), calloc(), realloc()</li>
+                <li>Allocation metrics: performance, utilization</li>
+                <li>Implemented a first-fit, splitting, coalescing, explicit-free list dynamic memory allocator with headers and footers in c.</li>
+                <li>Garbage collection</li>
+                <li>Reference Counting</li>
+              </ul>
+
+              <li>Network Programming</li>
+              <ul>
+                <li>TCP: Connection and stream oriented</li>
+                <li>UDP: Connection-less and packet oriented</li>
+                <li>IP/TCP</li>
+                <li>Domain name system (DNS)</li>
+                <li>Sockets, binds, listen, accept packets in c.</li>
+              </ul>
+
+              <li>Concurrent Programming</li>
+              <ul>
+                <li>Threads in C (pThread interface)</li>
+                <li>Threads share all local data and code except for stack.</li>
+                <li>Threads are less expensive then processes</li>
+                <li>Threads run within the context of a process.</li>
+                <li>All threads running on a process share the entire virtual address space except for stack.</li>
+                <li>Synchronization: locks on critical regions</li>
+                <li>Race conditions</li>
+                <li>Deadlocks</li>
+                <li>Mutex v.s. semaphore</li>
+              </ul>
+
+              <li>Linking/Compiling</li>
+              <ul>
+                <li>Strong vs weak symbols</li>
+                <li>Static library v.s. shared library</li>
+                <li>Linking at runtime</li>
+                <li>Relocation: Replace symbols and labels with addresses and values.</li>
+              </ul>
+            </ul>
+
+        </div>
+
+        <div class="left">
+            <h3 style="text-decoration: underline;">Computer Security</h3>
+            <p>12/15/2025</p>
+            <ul class="ClassLearns">
+              <li>Computer Security Mindset</li>
+              <ul>
+                <li>Thinking like an attacker: understand ways security can be circumvented</li>
+                <li>Threat Modeling: Identify assets, threats, and vulnerabilities</li>
+                <li>Thinking like an defender: How can we minimize our vulnerabilities?</li>
+                <li>Availability: users can access info/resources when needed</li>
+              </ul>
+
+              <li>Cryptography</li>
+              <ul>
+                <li>Goals of Cryptography</li>
+                <ul>
+                  <li>Confidentiality: prevent unauthorized access to data</li>
+                  <li>Integrity: ensure data is not altered</li>
+                  <li>Authentication: verify message origin</li>
+                </ul>
+
+                <li>Randomness</li>
+                <ul>
+                  <li>True randomness is secure but impractical</li>
+                  <li>Pseudo-Random Generator (PRG): expands small random seed into long random-looking output</li>
+                  <li>Pseudo-Random Function (PRF): fixed-length output built using PRGs</li>
+                </ul>
+
+                <li>Cipher Metrics</li>
+                <ul>
+                  <li>Confusion: ciphertext statistically independent of plaintext</li>
+                  <li>Diffusion: plaintext changes affect many ciphertext bits</li>
+                </ul>
+
+                <li>Ciphers</li>
+                <ul>
+                  <li>Substitution Ciphers</li>
+                  <ul>
+                    <li>Caesar Cipher: shifts each letter by a fixed amount</li>
+                    <li>Vigenère Cipher: shifts characters using a repeating key</li>
+                    <li>Vulnerable to frequency analysis</li>
+                  </ul>
+
+                  <li>Transposition Ciphers</li>
+                  <ul>
+                    <li>Rearrange plaintext symbols without changing them</li>
+                    <li>Examples: columnar, zig-zag, rail fence</li>
+                    <li>Low confusion, vulnerable to anagram attacks</li>
+                  </ul>
+
+                  <li>One-Time Pad (OTP)</li>
+                  <ul>
+                    <li>Key length equals plaintext length</li>
+                    <li>Encryption/Decryption: ciphertext = plaintext XOR key</li>
+                    <li>Perfect secrecy if key is truly random and never reused</li>
+                    <li>Highly impractical due to key management</li>
+                  </ul>
+
+                  <li>Stream Ciphers</li>
+                  <ul>
+                    <li>Generate keystream using PRG and a random seed</li>
+                    <li>Encrypt one bit/byte at a time</li>
+                    <li>More practical than OTP but seed must not be reused</li>
+                  </ul>
+
+                  <li>Block Ciphers</li>
+                  <ul>
+                    <li>Encrypt fixed-size blocks using a reusable key</li>
+                    <li>Most common encryption approach today</li>
+                    <li>Uses inverse function for decryption</li>
+                  </ul>
+                </ul>
+
+                <li>Block Cipher Modes</li>
+                <ul>
+                  <li>Electronic Codebook (ECB)</li>
+                  <ul>
+                    <li>Each block encrypted independently</li>
+                    <li>Can be parallelized</li>
+                    <li>Low diffusion, reveals patterns</li>
+                  </ul>
+
+                  <li>Cipher Block Chaining (CBC)</li>
+                  <ul>
+                    <li>Each block XORed with previous ciphertext block</li>
+                    <li>Improved diffusion</li>
+                    <li>Cannot be fully parallelized</li>
+                  </ul>
+
+                  <li>Advanced Encryption Standard (AES)</li>
+                  <ul>
+                    <li>Most widely used modern block cipher</li>
+                  </ul>
+                </ul>
+
+                <li>Hash Functions</li>
+                <ul>
+                  <li>Accept arbitrary-length input, produce fixed-size output</li>
+                  <li>Used for data integrity</li>
+                  <li>MD5 and SHA-1 are insecure due to collisions</li>
+                  <li>Merkle–Damgård construction chains compression functions</li>
+                  <li>Vulnerable to length extension attacks</li>
+                </ul>
+
+                <li>Message Authentication Codes (MAC)</li>
+                <ul>
+                  <li>Provide integrity and authentication using a secret key</li>
+                  <li>HMAC resists length extension attacks</li>
+                  <li>HMAC-SHA256 is commonly used</li>
+                </ul>
+
+                <li>Secure Channels</li>
+                <ul>
+                  <li>Encrypt data for confidentiality</li>
+                  <li>Apply MAC for integrity and authentication</li>
+                </ul>
+
+                <li>Hash Attacks</li>
+                <ul>
+                  <li>Collision Attack: find two messages with same hash</li>
+                  <li>Second Pre-image Attack: find a different message with same hash as a given one</li>
+                  <li>Pre-image Attack: find a message that produces a given hash</li>
+                </ul>
+              </ul>
+
+              <li>Asymmetric Cryptography</li>
+              <ul>
+                <li>Everyone has one public and one private key</li>
+                
+                <li>Symmetric Crypto Problem: shared secrets and not scalable.</li>
+
+                <li>Diffie–Hellman Key Exchange</li>
+                <ul>
+                  <li>Asymmetric protocol used to establish a shared symmetric key</li>
+                  <li>Allows secure key exchange over an insecure channel</li>
+                  <li>Often used before switching to faster symmetric encryption</li>
+                </ul>
+
+                <li>Asymmetric Secure Channel</li>
+                <ul>
+                  <li>Uses asymmetric cryptography to establish trust</li>
+                  <li>Once established, switches to symmetric encryption for efficiency</li>
+                </ul>
+
+                <li>RSA Cryptography</li>
+                <ul>
+                  <li>Public key encryption scheme</li>
+                  <li>Supports both encryption and digital signatures</li>
+                </ul>
+
+                <li>Integrity & Authenticity</li>
+                <ul>
+                  <li>Message is signed using the sender’s private key</li>
+                  <li>Signature is verified using the sender’s public key</li>
+                  <li>Ensures the message was not altered and confirms the sender</li>
+                </ul>
+
+                <li>Confidentiality</li>
+                <ul>
+                  <li>Message is encrypted using the recipient’s public key</li>
+                  <li>Message is decrypted using the recipient’s private key</li>
+                  <li>Only the intended recipient can read the message</li>
+                </ul>
+
+                <li>Key Usage Summary</li>
+                <ul>
+                  <li>Public key → encrypt or verify</li>
+                  <li>Private key → decrypt or sign</li>
+                </ul>
+
+                <li>Bleichenbacher’s Attack</li>
+                <ul>
+                  <li>Attack on RSA implementations</li>
+                  <li>Exploits small values or improper padding</li>
+                  <li>Can recover plaintext by taking mathematical roots</li>
+                </ul>
+              </ul>
+          
+              <li>Application Security</li>
+              <ul>
+                <li>Buffer Overflow</li>
+                <ul>
+                  <li>Program uses more memory than was allocated</li>
+                  <li>Often occurs on the stack</li>
+                  <li>Can overwrite important data or control flow</li>
+                </ul>
+
+                <li>Integer Overflow</li>
+                <ul>
+                  <li>A very large integer wraps around to a small value</li>
+                  <li>Can lead to incorrect memory allocation or logic errors</li>
+                </ul>
+
+                <li>Code Injection</li>
+                <ul>
+                  <li>Attacker injects code (e.g., shellcode) into a payload</li>
+                  <li>Injected code is then executed by the program</li>
+                </ul>
+
+                <li>Code Reuse</li>
+                <ul>
+                  <li>Redirects control flow to unintended existing code</li>
+                  <li>Avoids injecting new code</li>
+                </ul>
+
+                <li>Shellcode</li>
+                <ul>
+                  <li>Malicious payload executed after exploitation</li>
+                  <li>Common goal is spawning a shell (e.g., execve("/bin/sh"))</li>
+                  <li>Often escalates privileges (e.g., setuid(0))</li>
+                </ul>
+
+                <li>Return-Oriented Programming (ROP)</li>
+                <ul>
+                  <li>Attacker chains together existing code snippets</li>
+                  <li>Uses multiple return instructions</li>
+                  <li>Works well on x86 due to CISC instruction set</li>
+                </ul>
+
+                <li>Pointer Dereferencing</li>
+                <ul>
+                  <li>Using pointers to access or modify memory</li>
+                  <li>Example: overwriting variables via manipulated pointers</li>
+                  <li>Can allow arbitrary memory access</li>
+                </ul>
+
+                <li>Address Space Layout Randomization (ASLR)</li>
+                <ul>
+                  <li>Defense that randomizes memory locations on each execution</li>
+                  <li>Makes buffer overflow attacks harder</li>
+                  <li>Often defeated using NOP sleds</li>
+                </ul>
+
+                <li>Data Execution Prevention (DEP)</li>
+                <ul>
+                  <li>Defense makes stack and heap non-executable</li>
+                  <li>Prevents direct execution of injected code</li>
+                  <li>Encourages code-reuse attacks instead</li>
+                </ul>
+
+                <li>Unsafe Functions</li>
+                <ul>
+                  <li>Functions like gets() and strcpy() allow buffer overflows</li>
+                  <li>Should be avoided or replaced with safer alternatives</li>
+                </ul>
+
+                <li>Stack Canaries</li>
+                <ul>
+                  <li>Special values placed on the stack</li>
+                  <li>Detect if stack memory has been overwritten</li>
+                </ul>
+              </ul>
+
+              <li>Web Security</li>
+              <ul>
+                <li>Security when interacting with web sites.</li>
+
+                <li>SQL injection attacks</li>
+                <ul>
+                  <li>Inject valid sql syntax into server that will run</li>
+                  <li>Bypass logins, extract user data, modify data.</li>
+                  <li>Delete data, escalate privileges, take over server</li>
+                  <li>Prevention: <b>Don't confuse code with data</b></li>
+                </ul>
+
+                <li>Cross-Site Request Forgery (CSRF)</li>
+                <ul>
+                  <li>Browsers automatically resend cookies (user session)</li>
+                  <li>By crafting URL's an attacker can get indirect access without logging in.</li>
+                  <li>GET attacker spies on data retrieved using state.</li>
+                  <li>Violates Same Origin Policy (SOP): ensure user action originates from our website</li>
+                  <li>Prevention: Server verifies that CSRF token within POST request matches form</li>
+                </ul>
+
+                <li>Cross-Site Scripting Attack (XSS)</li>
+                <ul>
+                  <li>User submits malicious code to the server, server sends code back to user.</li>
+                  <li>Persistent: Server saves malicious code in database, any user get served JS.</li>
+                  <li>Reflected: attacker crafts URl with malicious code. User uses link and code is served back from the server and executed.</li>
+                </ul>
+
+                <li>Browser Security</li>
+                <ul>
+                  <li>Use HTTPS! DOM mirroring, JS rendering off, Sandboxing</li>
+                </ul>
+              </ul>
+
+              <li>Network Security</li>
+              <ul>
+                <li>Packet Sniffing: act of capturing and inspecting network packets</li>
+                <li>Email Spoofing: attacker forges address to appear as a different sender</li>
+                
+                <li>Man-in-the-middle attacks</li>
+                <ul>
+                  <li>Attacker secretly intercepts, relays, alters communication between parties</li>
+                  <li>Easy if using an unencrypted protocol.</li>
+                </ul>
+
+                <li>Denial of Service (DoS)</li>
+                <ul>
+                  <li>Make server/service unusable</li>
+                  <li>fork() bomb</li>
+                  <li>Many other ways to consume resources</li>
+                </ul>
+
+                <li>Distributed Denial of Service (DDOS)</li>
+                <ul>
+                  <li>Bot master has botnet</li>
+                  <li>SYN flooding attacks</li>
+                  <li>Ping of death (larger than acceptable packet)</li>
+                  <li>ICMP smurf attack, ARP flooding, Attacks on physical layer</li>
+                </ul>
+              </ul>
+
+              <li>Malware</li>
+              <ul>
+                <li>Malware: malicious software designed to steal data, cause damage, or take control of a system</li>
+                <li>Spyware: secretly monitors user activity and collects information without consent</li>
+                <li>Ransomware: encrypts a user’s system or files and demands payment to restore access</li>
+                <li>Virus: self-replicating software that infects other programs and requires user action to spread</li>
+                <li>Worm: self-replicating malware that spreads automatically over networks</li>
+                <li>Rootkit: gives attackers persistent, hidden control over a compromised system</li>
+                <li>Botnet: network of infected computers controlled remotely by a botmaster</li>
+              </ul>
+            </ul>
+        </div>
+      </div>
+
+      <div class="format">
+        <div class="left">
+            <h3 style="text-decoration: underline;">Scientific Computing</h3>
+            <p>12/15/2025</p>
+            <ul class="ClassLearns">
+
+              <li>Computational Science Pipeline</li>
+              <ul>
+                <li>Modeling, simulation, evaluation</li>
+                <li>Scientific visualization</li>
+              </ul>
+
+              <li>Mesh Generation</li>
+              <ul>
+                <li>Domain discretization</li>
+                <li>Structured vs. unstructured meshes</li>
+              </ul>
+
+              <li>Error Analysis</li>
+              <ul>
+                <li>Absolute and relative error</li>
+                <li>Conditioning and floating-point errors</li>
+              </ul>
+
+              <li>Interpolation</li>
+              <ul>
+                <li>Polynomial interpolation</li>
+                <li>Spline interpolation</li>
+              </ul>
+
+              <li>Root Finding</li>
+              <ul>
+                <li>Numerical solutions to non-closed form equations</li>
+                <li>Convergence and stability</li>
+              </ul>
+
+              <li>Numerical Integration</li>
+              <ul>
+                <li>Newton–Cotes and Gaussian quadrature</li>
+                <li>Runge–Kutta methods</li>
+              </ul>
+
+              <li>Random Numbers & Monte Carlo</li>
+              <ul>
+                <li>Pseudorandom number generation</li>
+                <li>Monte Carlo determineing volumes</li>
+              </ul>
+
+              <li>2D & 3D Visualization</li>
+              <ul>
+                <li>Color maps and contour plots</li>
+                <li>Marching squares and marching cubes</li>
+                <li>Ray Tracing</li>
+                <li>Ray Casting</li>
+              </ul>
+
+              <li>Eigen-faces Final project</li>
+              <ul>
+                <li>Took databases of faces and created matrix representation.</li>
+                <li>Took PCA of the matrix containing all most important facial features.</li>
+                <li>Experimented with how many eigenvalues were needed to recreate a face that was not in the original database.</li>
+              </ul>
+            </ul>
+        </div>
+
+        <div class="left">
+            <h3 style="text-decoration: underline;">Foundations of Data Analysis</h3>
+            <p>12/15/2025</p>
+            <ul class="ClassLearns">
+              <li>Probability Review</li>
+              <ul>
+                <li>Independence, correlation, conditionals</li>
+                <li>Distributions: normal, binomial</li>
+                <li>Expectation and variances</li>
+                <li>Joint distributions</li>
+                <li>Bayes Rule</li>
+                <li>Central Limit Theorem</li>
+                <li>Maximum likelihood expected</li>
+              </ul>
+
+              <li>Concentrations Measures</li>
+              <ul>
+                  <li>Markov inequality</li>
+                  <li>Chebyshev inequality</li>
+                  <li>Chernoff-Hoeffding inequality</li>
+              </ul>
+              
+              <li>Linear Algebra review</li>
+              <ul>
+                <li>Vector and Matrix Norms</li>
+                <li>Linear Independence</li>
+                <li>Orthogonality</li>
+                <li>Matrix inverses</li>
+                <li>Eigenvectors and Eigenvalues</li>
+              </ul>
+
+              <li>Linear Regression</li>
+              <ul>
+                <li>Simple Linear regression</li>
+                <li>Multiple variable explanatory vars</li>
+                <li>Polynomial Regression</li>
+                <li>Closed form solution a = (X.T @ X )^-1 @ X.T @ y</li>
+              </ul>
+
+              <li>Evaluating a model</li>
+              <ul>
+                <li>Overfitting</li>
+                <li>Underfitting</li>
+                <li>Leave one out cross validation</li>
+                <li>k fold cross validation</li>
+              </ul>
+
+              <li>Gradient Descent (GD)</li>
+              <ul>
+                <li>Algorithm to find global minima/maxima of a function</li>
+                <li>Idea: always step in the direction opposite of the gradient</li>
+                <li>Guaranteed to find global minimum for convex functions</li>
+                <li>Stochastic GD: choose random point and take gradient</li>
+                <li>Batch GD: choose a certain number of points and go in the opposite of their average gradient direction.</li>
+              </ul>
+
+              <li>Dimensionality Reduction</li>
+              <ul>
+                <li>Real world data has many features, we'd like a lower dim representation.</li>
+                <li>Singular value decomposition(SVD) - Breaks matrix into 3 separate matrices with rows in some ranking importance.</li>
+                <li>Eigenvalues and vectors and how they relate to SVD</li>
+                <li> How we can expand SVD to Principle Component Analysis for Dimensionality Reduction.</li>
+              </ul>
+
+              <li>Classification</li>
+              <ul>
+                <li>Linear classification</li>
+                <li>Optimizations with GD</li>
+                <li>Perceptron algorithm: If linearly separable data guaranteed to find solution</li>
+              </ul>
+
+              <li>Clustering</li>
+              <ul>
+                <li>Group together similar data points</li>
+                <li>Supervised learning: given set of points we want to predict label (Linear Regression, Classification)</li>
+                <li>Unsupervised learning: Have data but no labels, don't know explicitly what looking for (Dimensionality reduction, Clustering)</li>
+                <li>Voronoi diagrams: efficient data structure to find closet point to site.</li>
+                <li>Lloyd's algorithm assigns points to k clusters. (Utilizes Voronoi diagrams.)</li>
+                <li>Soft Clustering: each point is given a probability of it belonging to a certain cluster.</li>
+                <li>Expectation Maximization algorithm for soft clustering.</li>
+              </ul>
+
+              <li>Kernels</li>
+            </ul>
+        </div>
+      </div>
 
       <div class="format">
         <div class="left">
@@ -503,7 +1195,7 @@
               <li>Sequential Search: A simple search method that checks each element in order.</li>
               <li>Binary Search: An efficient search algorithm for sorted data, with O(log n) complexity.</li>
             </ul> 
-            <h4 tyle="font-weight: 700;">Sorts</h4>
+            <h4 style="font-weight: 700;">Sorts</h4>
             <ul>
               <li>Bubble Sort: A basic sorting algorithm that repeatedly swaps adjacent elements until sorted.</li>
               <li>Insertion Sort: Builds the sorted array one element at a time by inserting elements into their correct positions.</li>
@@ -658,11 +1350,11 @@
         <div class="left">
           <br><br><br><br><br>
           <p><strong>Currently Taking:</strong></p>
-          <p>8/18/2025</p>
-          <h3 style="text-decoration: underline;">Computer Systems</h3>
-          <h3 style="text-decoration: underline;">Computer Security</h3>
-          <h3 style="text-decoration: underline;">Foundations of Data Analysis</h3>
-          <h3 style="text-decoration: underline;">Scientific Computing</h3>
+          <p>12/18/2025</p>
+          <h3 style="text-decoration: underline;">Algorithms</h3>
+          <h3 style="text-decoration: underline;">Machine Learning</h3>
+          <h3 style="text-decoration: underline;">Databases</h3>
+          <h3 style="text-decoration: underline;">Vibe Coding</h3>
         </div>
       </div>
   </main>
